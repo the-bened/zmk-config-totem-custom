@@ -490,11 +490,11 @@
 
         default_layer {
             bindings = <
-         &kp X          &kp V          &kp L            &kp C              &kp W             /* | */        &kp J          &kp L              &kp U            &kp Y            &kp SEMI
+         &kp X          &kp V          &kp L            &kp C              &kp W             /* | */        &kp K          &kp H              &kp G            &kp F            &kp Q
          &kp U          &kp I          &lt SYM A        &hml LSHFT E       &kp O             /* | */        &kp S          &hmr RSHFT N       &lt SYM R        &kp T            &kp D
 &kp F12  &hml LGUI LBKT &hml LALT SEMI &hml LCTRL SQT   &kp P              &kp Y             /* | */        &kp B          &kp M              &hmr RCTRL COMMA &hmr LALT DOT    &hmr RGUI J  &tog SYS
                                        /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                       &lt LIN SPACE    &lt NAV ESC       &lt NAV SPACE     /* | */        &lt NAV SPACE  &lt NAV SPACE      &lt LIN SPACE
+                                       &lt LIN SPACE    &lt NAV SPACE      &lt NAV SPACE     /* | */        &lt NAV SPACE  &lt NAV SPACE      &lt LIN SPACE
             >;
         };
 
@@ -514,7 +514,7 @@
          &kp HOME      &kp LEFT       &lt SYM DOWN    &hml LSHFT RIGHT    &kp END            /* | */        &kp GRAVE      &hmr RSHFT N4      &lt SYM N5      &kp N6            &kp Z
 &trans   &hml LGUI ESC &hml LALT TAB  &hml LCTRL INS  &kp RET             &kp PG_DN          /* | */        &kp N0         &kp N1             &hmr RCTRL N2   &hmr LALT N3      &hmr RGUI EQUAL &trans
                                       /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                      &kp LGUI        &kp N0             &kp RET             /* | */        &kp RET        &kp N0             &kp RGUI
+                                      &kp LGUI        &kp N0              &kp RET            /* | */        &kp RET        &kp N0             &kp RGUI
             >;
         };
 
