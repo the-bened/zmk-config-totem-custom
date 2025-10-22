@@ -500,9 +500,9 @@
 
         system_layer {
             bindings = <
-         &trans        &trans        &trans           &trans             &trans             /* | */        &tans          &trans             &trans          &trans             &trans
-         &trans        &trans        &trans           &trans             &trans             /* | */        &tans          &trans             &trans          &trans             &trans
-&trans   &trans        &trans        &trans           &trans             &trans             /* | */        &tans          &trans             &trans          &trans             &trans          &trans
+         &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans
+         &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans
+&trans   &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans          &trans
                                      /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                      &lt WIN SPACE    &trans             &trans             /* | */        &trans         &trans             &lt WIN SPACE
             >;
