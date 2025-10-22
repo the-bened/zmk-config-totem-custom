@@ -505,6 +505,8 @@
 &trans   &trans        &trans        &trans           &trans             &trans             /* | */        &tans          &trans             &trans          &trans             &trans          &trans
                                      /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                      &lt WIN SPACE    &trans             &trans             /* | */        &trans         &trans             &lt WIN SPACE
+            >;
+        };
 
         navigation_layer {
             bindings = <
