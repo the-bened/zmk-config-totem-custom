@@ -40,7 +40,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HRM Left";
             #binding-cells = <2>;
-            flavor = "balanced"; //produces a "hold" if another key is both pressed and released within the tapping-term.
+            flavor = "hold-preferred";
             require-prior-idle-ms = <150>; // immediately resolves a HRM as "tap" when it is pressed shortly after another key has been tapped.
             tapping-term-ms = <280>; //how long a key must be pressed to trigger the "hold" behavior
             quick-tap-ms = <175>; //If you press a tapped hold-tap again within quick-tap-ms milliseconds of the first press, it will always trigger the tap behavior.
@@ -52,7 +52,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HRM Right";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             require-prior-idle-ms = <150>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
