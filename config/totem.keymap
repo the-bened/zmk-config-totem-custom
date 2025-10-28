@@ -33,7 +33,33 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+        combo_eszett {
+            timeout-ms = <50>;
+            key-positions = <33 9>; // Left thumb (nav), right pinky up
+            layers = <0 1 2>
+            bindings = <&kp MINUS>;
+        };
+        combo_ypsilon {
+            timeout-ms = <50>;
+            key-positions = <33 19>; // Left thumb (nav), right pinky
+            layers = <0 1 2>
+            bindings = <&kp Z>;
+        };
+        combo_enter1 {
+            timeout-ms = <50>;
+            key-positions = <33 35>; // Left thumb (nav), right thumb left
+            layers = <0 1 2>
+            bindings = <&kp RET>;
+        };
+        combo_enter2 {
+            timeout-ms = <50>;
+            key-positions = <36 34>; // Right thumb (nav), left thumb right
+            layers = <0 1 2>
+            bindings = <&kp RET>;
+        };
+    };
 
     behaviors {
         hml: home_row_mod_left {
@@ -60,19 +86,16 @@
             hold-trigger-key-positions = <LEFT_KEYS LEFT_THUMBS>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
         };
-        swapper: swapper {
-            compatible = "zmk,behavior-tri-state";
-            label = "SWAPPER";
-            #binding-cells = <0>;
-            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-            ignored-key-positions = <7 13 16 17 18>;
-        };
-        tabber: tabber {
-            compatible = "zmk,behavior-tri-state";
-            label = "TABBER";
-            #binding-cells = <0>;
-            bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
-            ignored-key-positions = <13>;
+        // Overwrite default:
+        lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&mo>, <&kp>;
+            display-name = "Layer-Tap";
         };
     };
 
