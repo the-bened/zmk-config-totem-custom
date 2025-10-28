@@ -36,25 +36,25 @@
     combos {
         compatible = "zmk,combos";
         combo_eszett {
-            timeout-ms = <50>;
+            timeout-ms = <70>;
             key-positions = <33 9>; // Left thumb (nav), right pinky up
             layers = <0 1 2>;
             bindings = <&kp MINUS>;
         };
         combo_ypsilon {
-            timeout-ms = <50>;
+            timeout-ms = <70>;
             key-positions = <33 19>; // Left thumb (nav), right pinky
             layers = <0 1 2>;
             bindings = <&kp Z>;
         };
         combo_enter1 {
-            timeout-ms = <50>;
+            timeout-ms = <70>;
             key-positions = <33 35>; // Left thumb (nav), right thumb left
             layers = <0 1 2>;
             bindings = <&kp RET>;
         };
         combo_enter2 {
-            timeout-ms = <50>;
+            timeout-ms = <70>;
             key-positions = <36 34>; // Right thumb (nav), left thumb right
             layers = <0 1 2>;
             bindings = <&kp RET>;
@@ -68,7 +68,7 @@
             #binding-cells = <2>;
             flavor = "balanced"; //produces a "hold" if another key is both pressed and released within the tapping-term.
             require-prior-idle-ms = <150>; // immediately resolves a HRM as "tap" when it is pressed shortly after another key has been tapped.
-            tapping-term-ms = <200>; //how long a key must be pressed to trigger the "hold" behavior
+            tapping-term-ms = <185>; //how long a key must be pressed to trigger the "hold" behavior
             quick-tap-ms = <175>; //If you press a tapped hold-tap again within quick-tap-ms milliseconds of the first press, it will always trigger the tap behavior.
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <RIGHT_KEYS RIGHT_THUMBS>; // List of keys on the right side of the keyboard
@@ -80,7 +80,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             require-prior-idle-ms = <150>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <185>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <LEFT_KEYS LEFT_THUMBS>; // List of keys on the left side of the keyboard
@@ -92,7 +92,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             require-prior-idle-ms = <150>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <185>;
             quick-tap-ms = <175>;
             bindings = <&mo>, <&kp>;
             display-name = "Layer-Tap";
