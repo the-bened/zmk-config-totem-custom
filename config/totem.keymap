@@ -22,7 +22,6 @@
 #define ZMK 6
 
 &mt {
-    flavor = "balanced";
     tapping-term-ms = <220>;
 };
 
@@ -45,27 +44,27 @@
     combos {
         compatible = "zmk,combos";
         combo_eszett {
-            timeout-ms = <70>;
+            timeout-ms = <100>;
             key-positions = <33 9>; // Left thumb (nav), right pinky up
             layers = <0 1 2>;
             bindings = <&kp MINUS>;
         };
         combo_ypsilon {
-            timeout-ms = <70>;
+            timeout-ms = <100>;
             key-positions = <33 19>; // Left thumb (nav), right pinky
             layers = <0 1 2>;
             bindings = <&kp Z>;
         };
         combo_enter1 {
-            timeout-ms = <70>;
+            timeout-ms = <100>;
             key-positions = <33 35>; // Left thumb (nav), right thumb left
-            layers = <0 1 2>;
+            layers = <0 1 2 3>;
             bindings = <&kp RET>;
         };
         combo_enter2 {
-            timeout-ms = <70>;
+            timeout-ms = <100>;
             key-positions = <36 34>; // Right thumb (nav), left thumb right
-            layers = <0 1 2>;
+            layers = <0 1 2 3>;
             bindings = <&kp RET>;
         };
     };
@@ -518,7 +517,7 @@
          &kp RA(MINUS)   &kp LS(N7)   &kp RA(N7)      &kp RA(N0)     &kp LS(RBKT)            /* | */        &kp LS(MINUS) &kp LS(N8)         &kp LS(N9)      &kp FSLH       &kp LS(DOT)
 &trans   &kp NON_US_HASH &kp RS(N4)   &kp RA(NON_US_BACKSLASH) &kp RA(RBKT) &insert_backtick /* | */        &kp RBKT      &kp RS(N5)         &kp RS(N2)      &kp LS(BSLH)   &kp LS(COMMA)  &trans
                                      /* - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                     &kp RALT        &trans         &kp RET                 /* | */       &kp RET       &trans             &kp RALT
+                                      &kp RALT        &trans         &kp RET                 /* | */        &kp RET       &trans             &kp RALT
             >;
         };
 
