@@ -19,7 +19,7 @@
 #define SYM 3
 #define LIN 4
 #define WIN 5
-#define QMK 6
+#define ZMK 6
 
 / {
     conditional_layers {
@@ -27,7 +27,7 @@
 
         sys_layer {
             if-layers = <NAV SYM>;
-            then-layer = <QMK>;
+            then-layer = <ZMK>;
         };
     };
 };
@@ -62,63 +62,13 @@
     };
 
     behaviors {
-        hml: home_row_mod_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM Left";
-            #binding-cells = <2>;
-            // produces a "hold" if another key is both pressed and released within the tapping-term:
+        &lt {
+            tapping-term-ms = <220>;
             flavor = "balanced";
-            // immediately resolves a HRM as "tap" when it is pressed shortly after another key has been tapped:
-            require-prior-idle-ms = <150>;
-            // how long a key must be pressed to trigger the "hold" behavior:
-            tapping-term-ms = <280>;
-            // If you press a tapped hold-tap again within quick-tap-ms milliseconds of the first press,
-            // it will always trigger the tap behavior:
-            quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
-            // List of keys on the right side of the keyboard:
-            hold-trigger-key-positions = <RIGHT_KEYS RIGHT_THUMBS>;
-            // delays the positional-hold-tap decision until the next key's release. With this,
-            // mods can be combined when held:
-            hold-trigger-on-release;
         };
-        hmr: home_row_mod_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM Right";
-            #binding-cells = <2>;
+        &mt {
+            tapping-term-ms = <220>;
             flavor = "balanced";
-            require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
-            // List of keys on the left side of the keyboard:
-            hold-trigger-key-positions = <LEFT_KEYS LEFT_THUMBS>;
-            hold-trigger-on-release;
-        };
-        // Alternative for &lt:
-        ltl: layer_tap_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            bindings = <&mo>, <&kp>;
-            display-name = "Layer-Tap left";
-            hold-trigger-key-positions = <RIGHT_KEYS RIGHT_THUMBS>;
-            hold-trigger-on-release;
-        };
-        ltr: layer_tap_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            bindings = <&mo>, <&kp>;
-            display-name = "Layer-Tap right";
-            hold-trigger-key-positions = <LEFT_KEYS LEFT_THUMBS>;
-            hold-trigger-on-release;
         };
     };
 
@@ -537,10 +487,10 @@
         default_layer {
             bindings = <
          &kp X          &kp V          &kp L            &kp C              &kp W             /* | */        &kp K          &kp H              &kp G            &kp F            &kp Q
-         &kp U          &kp I          &ltl SYM A       &hml LSHFT E       &kp O             /* | */        &kp S          &hmr RSHFT N       &ltr SYM R       &kp T            &kp D
-&kp DEL  &hml LGUI LBKT &hml LALT SEMI &hml LCTRL SQT   &kp P              &kp Y             /* | */        &kp B          &kp M              &hmr RCTRL COMMA &hmr LALT DOT    &hmr RGUI J  &tog SYS
+         &kp U          &kp I          &lt SYM A        &mt LSHFT E        &kp O             /* | */        &kp S          &mt RSHFT N        &lt SYM R        &kp T            &kp D
+&kp DEL  &mt LGUI LBKT  &mt LALT SEMI  &mt LCTRL SQT    &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA &mt LALT DOT    &mt RGUI J  &tog SYS
                                        /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                       &mo LIN          &ltl NAV SPACE     &mo SYM           /* | */        &mo SYM        &ltr NAV SPACE     &mo LIN
+                                       &mo LIN          &lt NAV SPACE      &mo SYM           /* | */        &mo SYM        &lt NAV SPACE      &mo LIN
             >;
         };
 
@@ -556,9 +506,9 @@
 
         navigation_layer {
             bindings = <
-         &kp PG_UP     &kp BSPC       &kp UP          &kp DEL             &kp RA(E)          /* | */        &kp LS(N3)     &kp N7             &kp N8          &kp N9            &kp MINUS
-         &kp HOME      &kp LEFT       &ltl SYM DOWN   &hml LSHFT RIGHT    &kp END            /* | */        &kp GRAVE      &hmr RSHFT N4      &ltr SYM N5     &kp N6            &kp Z
-&trans   &hml LGUI ESC &hml LALT TAB  &hml LCTRL INS  &kp RET             &kp PG_DN          /* | */        &kp N0         &kp N1             &hmr RCTRL N2   &hmr LALT N3      &hmr RGUI EQUAL &trans
+         &kp PG_UP     &kp BSPC       &kp UP          &kp DEL             &none              /* | */        &kp GRAVE      &kp N7             &kp N8          &kp N9            &kp MINUS
+         &kp HOME      &kp LEFT       &lt SYM DOWN    &mt LSHFT RIGHT     &kp END            /* | */        &kp RA(E)      &mt RSHFT N4       &lt SYM N5      &kp N6            &kp Z
+&trans   &mt LGUI ESC  &mt LALT TAB   &mt LCTRL INS   &kp RET             &kp PG_DN          /* | */        &kp N0         &kp N1             &mt RCTRL N2    &mt LALT N3       &mt RGUI EQUAL  &trans
                                       /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                       &kp LGUI        &kp N0              &kp RET            /* | */        &kp RET        &kp N0             &kp RGUI
             >;
@@ -570,7 +520,7 @@
          &kp RA(MINUS)    &kp LS(N7) &kp RA(N7)      &kp RA(N0)     &kp LS(RBKT)           /* | */        &kp LS(MINUS) &kp LS(N8)         &kp LS(N9)      &kp FSLH       &kp LS(DOT)
 &trans   &kp NON_US_HASH  &kp RS(N4) &kp RA(NON_US_BACKSLASH) &kp RA(RBKT) &insert_backtick/* | */        &kp RBKT      &kp RS(N5)         &kp RS(N2)      &kp LS(BSLH)   &kp LS(COMMA)  &trans
                                      /* - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                     &trans           &trans        &trans                 /* | */        &trans        &trans             &trans
+                                     &kp RALT        &trans         &kp RET                 /* | */       &kp RET       &trans             &kp RALT
             >;
         };
 
@@ -578,7 +528,7 @@
             bindings = <
         &kp K_APP  &kp RA(DOT)    &kp RA(LS(V))  &kp RA(LS(B))  &kp RA(NON_US_HASH)         /* | */        &kp F12  &kp F7  &kp F8  &kp F9  &kp RA(LS(S))
         &kp CAPS   &linux_bullet  &kp RA(V)      &kp RA(B)      &kp RA(N)                   /* | */        &kp F11  &kp F4  &kp F5  &kp F6  &kp RA(SLASH)
-&trans  &kp PSCRN  &kp RA(LS(Z))  &kp RA(Z)      &kp RA(X)      &kp RA(LS(X))               /* | */        &kp F10  &kp F1  &kp F2  &kp F3  &kp RALT                                    &trans
+&trans  &kp PSCRN  &kp RA(LS(Z))  &kp RA(Z)      &kp RA(X)      &kp RA(LS(X))               /* | */        &kp F10  &kp F1  &kp F2  &kp F3  &kp LS(N3)                                   &trans
                                      /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                   &trans         &trans         &trans                      /* | */        &trans   &trans  &trans
             >;
@@ -588,13 +538,13 @@
             bindings = <
        &kp K_APP &windows_insert_ellipsis &win_lowerSingleOpenQuote &win_upperSingleOpenQuote &win_upperSingleCloseQuote &kp F12  &kp F7  &kp F8  &kp F9  &kp RA(LS(MINUS))
        &kp CAPS  &win_bullet              &win_lowerOpenDblQuote    &win_upperOpenDblQuote    &win_upperCloseDblQuote    &kp F11  &kp F4  &kp F5  &kp F6  &win_dash
-&trans &kp PSCRN &win_singleOpenChevron   &win_doubleRightChevrons  &win_doubleLeftChevrons   &win_singleCloseChevron    &kp F10  &kp F1  &kp F2  &kp F3  &kp RALT                     &trans
+&trans &kp PSCRN &win_singleOpenChevron   &win_doubleRightChevrons  &win_doubleLeftChevrons   &win_singleCloseChevron    &kp F10  &kp F1  &kp F2  &kp F3  &kp LS(N3)                     &trans
                                      /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                      &trans           &trans             &trans             /* | */        &trans         &trans             &trans
             >;
         };
 
-        qmk_layer {
+        zmk_layer {
             bindings = <
          &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2    &none              &studio_unlock     /* | */        &kp K_VOL_UP    &none             &kp F20 /* mic */  &none            &none
          &bt BT_CLR    &bt BT_CLR_ALL &none           &none              &ext_power EP_TOG  /* | */        &kp K_MUTE      &kp K_PREV        &kp K_PLAY_PAUSE   &kp K_NEXT       &none
