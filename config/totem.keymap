@@ -62,11 +62,13 @@
     };
 
     behaviors {
-        &lt {
+        lt: lt {
+            compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <220>;
             flavor = "balanced";
         };
-        &mt {
+        mt: mt {
+            compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <220>;
             flavor = "balanced";
         };
