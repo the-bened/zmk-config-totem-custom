@@ -33,6 +33,15 @@
 };
 
 / {
+    &lt {
+        tapping-term-ms = <220>;
+        flavor = "balanced";
+    };
+    &mt {
+        tapping-term-ms = <220>;
+        flavor = "balanced";
+    };
+
     combos {
         compatible = "zmk,combos";
         combo_eszett {
@@ -58,19 +67,6 @@
             key-positions = <36 34>; // Right thumb (nav), left thumb right
             layers = <0 1 2>;
             bindings = <&kp RET>;
-        };
-    };
-
-    behaviors {
-        lt: lt {
-            compatible = "zmk,behavior-hold-tap";
-            tapping-term-ms = <220>;
-            flavor = "balanced";
-        };
-        mt: mt {
-            compatible = "zmk,behavior-hold-tap";
-            tapping-term-ms = <220>;
-            flavor = "balanced";
         };
     };
 
