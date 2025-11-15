@@ -28,7 +28,6 @@
 
 &lt {
     tapping-term-ms = <220>;
-    flavor = "balanced";
 };
 
 / {
@@ -486,8 +485,8 @@
         default_layer {
             bindings = <
          &kp X          &kp V          &kp L            &kp C              &kp W             /* | */        &kp K          &kp H              &kp G            &kp F            &kp Q
-         &kp U          &kp I          &lt SYM A        &mt LSHFT E        &kp O             /* | */        &kp S          &mt RSHFT N        &lt SYM R        &kp T            &kp D
-&kp DEL  &mt LGUI LBKT  &mt LALT SEMI  &mt LCTRL SQT    &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA &mt LALT DOT    &mt RGUI J  &tog SYS
+         &kp U          &kp I          &kp A            &mt LSHFT E        &kp O             /* | */        &kp S          &mt RSHFT N        &kp R            &kp T            &kp D
+&kp DEL  &mt LGUI LBKT  &mt LALT SEMI  &mt LCTRL SQT    &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT    &mt RGUI J  &tog SYS
                                        /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                        &mo LIN          &lt NAV SPACE      &mo SYM           /* | */        &mo SYM        &lt NAV SPACE      &mo LIN
             >;
@@ -506,7 +505,7 @@
         navigation_layer {
             bindings = <
          &kp PG_UP     &kp BSPC       &kp UP          &kp DEL             &none              /* | */        &kp GRAVE      &kp N7             &kp N8          &kp N9            &kp MINUS
-         &kp HOME      &kp LEFT       &lt SYM DOWN    &mt LSHFT RIGHT     &kp END            /* | */        &kp RA(E)      &mt RSHFT N4       &lt SYM N5      &kp N6            &kp Z
+         &kp HOME      &kp LEFT       &kp DOWN        &mt LSHFT RIGHT     &kp END            /* | */        &kp RA(E)      &mt RSHFT N4       &kp N5          &kp N6            &kp Z
 &trans   &mt LGUI ESC  &mt LALT TAB   &mt LCTRL INS   &kp RET             &kp PG_DN          /* | */        &kp N0         &kp N1             &mt RCTRL N2    &mt LALT N3       &mt RGUI EQUAL  &trans
                                       /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                       &kp LGUI        &kp N0              &kp RET            /* | */        &kp RET        &kp N0             &kp RGUI
@@ -515,9 +514,9 @@
 
         symbols_layer {
             bindings = <
-         &kp RA(Q)      &kp LS(FSLH) &kp RA(N8)      &kp RA(N9)     &insert_caret          /* | */        &kp RS(N1)    &kp NON_US_BSLH    &kp LS(NUBS)    &kp LS(N0)     &kp RS(N6)
-         &kp RA(MINUS)    &kp LS(N7) &kp RA(N7)      &kp RA(N0)     &kp LS(RBKT)           /* | */        &kp LS(MINUS) &kp LS(N8)         &kp LS(N9)      &kp FSLH       &kp LS(DOT)
-&trans   &kp NON_US_HASH  &kp RS(N4) &kp RA(NON_US_BACKSLASH) &kp RA(RBKT) &insert_backtick/* | */        &kp RBKT      &kp RS(N5)         &kp RS(N2)      &kp LS(BSLH)   &kp LS(COMMA)  &trans
+         &kp RA(Q)       &kp LS(FSLH) &kp RA(N8)      &kp RA(N9)     &insert_caret           /* | */        &kp RS(N1)    &kp NON_US_BSLH    &kp LS(NUBS)    &kp LS(N0)     &kp RS(N6)
+         &kp RA(MINUS)   &kp LS(N7)   &kp RA(N7)      &kp RA(N0)     &kp LS(RBKT)            /* | */        &kp LS(MINUS) &kp LS(N8)         &kp LS(N9)      &kp FSLH       &kp LS(DOT)
+&trans   &kp NON_US_HASH &kp RS(N4)   &kp RA(NON_US_BACKSLASH) &kp RA(RBKT) &insert_backtick /* | */        &kp RBKT      &kp RS(N5)         &kp RS(N2)      &kp LS(BSLH)   &kp LS(COMMA)  &trans
                                      /* - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                      &kp RALT        &trans         &kp RET                 /* | */       &kp RET       &trans             &kp RALT
             >;
