@@ -22,12 +22,15 @@
 #define ZMK 6
 
 &mt {
-    flavor = "balanced";
-    tapping-term-ms = <220>;
+    flavor = "balanced"; // Produces a "hold" if another key is both pressed and released within the tapping-term.
+    tapping-term-ms = <220>; // How long a key must be pressed to trigger the "hold" behavior
+    quick-tap-ms = <175>; // If you press a tapped hold-tap again within quick-tap-ms milliseconds of the first press, it will always trigger the tap behavior.
 };
 
 &lt {
+    flavor = "balanced";
     tapping-term-ms = <220>;
+    quick-tap-ms = <175>;
 };
 
 / {
@@ -64,9 +67,21 @@
         };
         combo_enter2 {
             timeout-ms = <100>;
-            key-positions = <36 34>; // Right thumb (nav), left thumb right
+            key-positions = <34 36>; // Left thumb right, right thumb (nav)
             layers = <0 1 2 3>;
             bindings = <&kp RET>;
+        };
+        combo_enter3 {
+            timeout-ms = <100>;
+            key-positions = <34 35>; // Left thumb right, right thumb left
+            layers = <0 1 2 3>;
+            bindings = <&kp RET>;
+        };
+        combo_shift {
+            timeout-ms = <100>;
+            key-positions = <33 36>; // Left thumb (nav), right thumb (nav)
+            layers = <0 1 2 3>;
+            bindings = <&kp LSHFT>;
         };
     };
 
@@ -485,8 +500,8 @@
         default_layer {
             bindings = <
          &kp X          &kp V          &kp L            &kp C              &kp W             /* | */        &kp K          &kp H              &kp G            &kp F            &kp Q
-         &kp U          &kp I          &kp A            &mt LSHFT E        &kp O             /* | */        &kp S          &mt RSHFT N        &kp R            &kp T            &kp D
-&kp DEL  &mt LGUI LBKT  &mt LALT SEMI  &mt LCTRL SQT    &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT    &mt RGUI J  &tog SYS
+         &kp U          &kp I          &kp A            &kp E              &kp O             /* | */        &kp S          &kp N              &kp R            &kp T            &kp D
+&kp DEL  &mt LGUI LBKT  &mt LALT SEMI  &mt LCTRL SQT    &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT    &mt RGUI J   &tog SYS
                                        /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                        &mo LIN          &lt NAV SPACE      &mo SYM           /* | */        &mo SYM        &lt NAV SPACE      &mo LIN
             >;
@@ -505,10 +520,10 @@
         navigation_layer {
             bindings = <
          &kp PG_UP     &kp BSPC       &kp UP          &kp DEL             &none              /* | */        &kp GRAVE      &kp N7             &kp N8          &kp N9            &kp MINUS
-         &kp HOME      &kp LEFT       &kp DOWN        &mt LSHFT RIGHT     &kp END            /* | */        &kp RA(E)      &mt RSHFT N4       &kp N5          &kp N6            &kp Z
+         &kp HOME      &kp LEFT       &kp DOWN        &kp RIGHT           &kp END            /* | */        &kp RA(E)      &kp N4             &kp N5          &kp N6            &kp Z
 &trans   &mt LGUI ESC  &mt LALT TAB   &mt LCTRL INS   &kp RET             &kp PG_DN          /* | */        &kp N0         &kp N1             &mt RCTRL N2    &mt LALT N3       &mt RGUI EQUAL  &trans
                                       /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                      &kp LGUI        &kp N0              &kp RET            /* | */        &kp RET        &kp N0             &kp RGUI
+                                      &kp LGUI        &kp LSHFT           &kp RET            /* | */        &kp RET        &kp RSHFT          &kp RGUI
             >;
         };
 
