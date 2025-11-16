@@ -17,9 +17,10 @@
 #define SYS 1
 #define NAV 2
 #define SYM 3
-#define LIN 4
-#define WIN 5
-#define ZMK 6
+#define SY2 4
+#define LIN 5
+#define WIN 6
+#define ZMK 7
 
 &mt {
     flavor = "balanced"; // Produces a "hold" if another key is both pressed and released within the tapping-term.
@@ -503,7 +504,7 @@
          &kp U          &kp I          &kp A            &kp E              &kp O             /* | */        &kp S          &kp N              &kp R            &kp T            &kp D
 &kp DEL  &mt LGUI LBKT  &mt LALT SEMI  &mt LCTRL SQT    &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT    &mt RGUI J   &tog SYS
                                        /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                       &mo LIN          &lt NAV SPACE      &mo SYM           /* | */        &mo SYM        &lt NAV SPACE      &mo LIN
+                                       &mo SYM          &lt NAV SPACE      &kp LSHFT         /* | */        &kp RSHFT      &lt NAV SPACE      &mo SYM
             >;
         };
 
@@ -513,7 +514,7 @@
          &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans
 &trans   &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans          &trans
                                      /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                     &mo WIN          &trans             &trans             /* | */        &trans         &trans             &mo WIN
+                                     &mo SY2          &trans             &trans             /* | */        &trans         &trans             &mo SY2
             >;
         };
 
@@ -533,7 +534,17 @@
          &kp RA(MINUS)   &kp LS(N7)   &kp RA(N7)      &kp RA(N0)     &kp LS(RBKT)            /* | */        &kp LS(MINUS) &kp LS(N8)         &kp LS(N9)      &kp FSLH       &kp LS(DOT)
 &trans   &kp NON_US_HASH &kp RS(N4)   &kp RA(NON_US_BACKSLASH) &kp RA(RBKT) &insert_backtick /* | */        &kp RBKT      &kp RS(N5)         &kp RS(N2)      &kp LS(BSLH)   &kp LS(COMMA)  &trans
                                      /* - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                      &kp RALT        &trans         &kp RET                 /* | */        &kp RET       &trans             &kp RALT
+                                      &kp RALT        &mo LIN        &kp RET                 /* | */        &kp RET       &mo LIN            &kp RALT
+            >;
+        };
+
+        symbols2_layer {
+            bindings = <
+         &kp RA(Q)       &kp LS(FSLH) &kp RA(N8)      &kp RA(N9)     &insert_caret           /* | */        &kp RS(N1)    &kp NON_US_BSLH    &kp LS(NUBS)    &kp LS(N0)     &kp RS(N6)
+         &kp RA(MINUS)   &kp LS(N7)   &kp RA(N7)      &kp RA(N0)     &kp LS(RBKT)            /* | */        &kp LS(MINUS) &kp LS(N8)         &kp LS(N9)      &kp FSLH       &kp LS(DOT)
+&trans   &kp NON_US_HASH &kp RS(N4)   &kp RA(NON_US_BACKSLASH) &kp RA(RBKT) &insert_backtick /* | */        &kp RBKT      &kp RS(N5)         &kp RS(N2)      &kp LS(BSLH)   &kp LS(COMMA)  &trans
+                                     /* - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+                                      &kp RALT        &mo WIN        &kp RET                 /* | */        &kp RET       &mo WIN            &kp RALT
             >;
         };
 
