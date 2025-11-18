@@ -35,12 +35,15 @@
 };
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        sys_layer {
-            if-layers = <NAV SYM>;
-            then-layer = <ZMK>;
+    behaviors {
+        ht_tog_mo_1: ht_tog_mo_1 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_TOG_MO_1";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <220>;
+            hold-trigger-on-release;
+            bindings = <&tog SYS>, <&mo ZMK>;
         };
     };
 };
@@ -500,21 +503,21 @@
 
         default_layer {
             bindings = <
-         &kp X          &kp V          &kp L            &kp C              &kp W             /* | */        &kp K          &kp H              &kp G            &kp F            &kp Q
-         &kp U          &kp I          &kp A            &kp E              &kp O             /* | */        &kp S          &kp N              &kp R            &kp T            &kp D
-&kp DEL  &mt LGUI LBKT  &mt LALT SEMI  &mt LCTRL SQT    &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT    &mt RGUI J   &tog SYS
-                                       /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                       &mo SYM          &lt NAV SPACE      &kp LSHFT         /* | */        &kp RSHFT      &lt NAV SPACE      &mo SYM
+            &kp X          &kp V          &kp L            &kp C              &kp W             /* | */        &kp K          &kp H              &kp G            &kp F            &kp Q
+            &kp U          &kp I          &kp A            &kp E              &kp O             /* | */        &kp S          &kp N              &kp R            &kp T            &kp D
+&lt LIN DEL &mt LGUI LBKT  &mt LALT SEMI  &mt LCTRL SQT    &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT    &mt RGUI J   &ht_tog_mo_1
+                                          /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+                                          &mo SYM          &lt NAV SPACE      &kp LSHFT         /* | */        &kp RSHFT      &lt NAV SPACE      &mo SYM
             >;
         };
 
         system_layer {
             bindings = <
-         &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans
-         &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans
-&trans   &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans          &trans
-                                     /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                     &mo SY2          &trans             &trans             /* | */        &trans         &trans             &mo SY2
+            &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans
+            &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans
+&lt WIN DEL &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans      &trans
+                                        /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+                                        &mo SY2          &trans             &trans             /* | */        &trans         &trans             &mo SY2
             >;
         };
 
@@ -524,7 +527,7 @@
          &kp HOME      &kp LEFT       &kp DOWN        &kp RIGHT           &kp END            /* | */        &kp RA(E)      &kp N4             &kp N5          &kp N6            &kp Z
 &trans   &mt LGUI ESC  &mt LALT TAB   &mt LCTRL INS   &kp RET             &kp PG_DN          /* | */        &kp N0         &kp N1             &mt RCTRL N2    &mt LALT N3       &mt RGUI EQUAL  &trans
                                       /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                      &kp LGUI        &kp LSHFT           &kp RET            /* | */        &kp RET        &kp RSHFT          &kp RGUI
+                                      &kp SPACE       &kp LSHFT           &kp RET            /* | */        &kp RET        &kp RSHFT          &kp SPACE
             >;
         };
 
@@ -534,7 +537,7 @@
          &kp RA(MINUS)   &kp LS(N7)   &kp RA(N7)      &kp RA(N0)     &kp LS(RBKT)            /* | */        &kp LS(MINUS) &kp LS(N8)         &kp LS(N9)      &kp FSLH       &kp LS(DOT)
 &trans   &kp NON_US_HASH &kp RS(N4)   &kp RA(NON_US_BACKSLASH) &kp RA(RBKT) &insert_backtick /* | */        &kp RBKT      &kp RS(N5)         &kp RS(N2)      &kp LS(BSLH)   &kp LS(COMMA)  &trans
                                      /* - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                      &kp RALT        &mo LIN        &kp RET                 /* | */        &kp RET       &mo LIN            &kp RALT
+                                      &kp RALT        &mo LIN        &kp LGUI                /* | */        &kp LGUI      &mo LIN            &kp RALT
             >;
         };
 
@@ -544,7 +547,7 @@
          &kp RA(MINUS)   &kp LS(N7)   &kp RA(N7)      &kp RA(N0)     &kp LS(RBKT)            /* | */        &kp LS(MINUS) &kp LS(N8)         &kp LS(N9)      &kp FSLH       &kp LS(DOT)
 &trans   &kp NON_US_HASH &kp RS(N4)   &kp RA(NON_US_BACKSLASH) &kp RA(RBKT) &insert_backtick /* | */        &kp RBKT      &kp RS(N5)         &kp RS(N2)      &kp LS(BSLH)   &kp LS(COMMA)  &trans
                                      /* - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                      &kp RALT        &mo WIN        &kp RET                 /* | */        &kp RET       &mo WIN            &kp RALT
+                                      &kp RALT        &mo WIN        &kp LGUI                /* | */        &kp LGUI      &mo WIN            &kp RALT
             >;
         };
 
@@ -564,7 +567,7 @@
        &kp CAPS  &win_bullet              &win_lowerOpenDblQuote    &win_upperOpenDblQuote    &win_upperCloseDblQuote    &kp F11  &kp F4  &kp F5  &kp F6  &win_dash
 &trans &kp PSCRN &win_singleOpenChevron   &win_doubleRightChevrons  &win_doubleLeftChevrons   &win_singleCloseChevron    &kp F10  &kp F1  &kp F2  &kp F3  &kp LS(N3)                     &trans
                                      /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                     &trans           &trans             &trans             /* | */        &trans         &trans             &trans
+                                     &trans           &trans            &trans             /* | */        &trans         &trans             &trans
             >;
         };
 
@@ -572,7 +575,7 @@
             bindings = <
          &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2    &none              &studio_unlock     /* | */        &kp K_VOL_UP    &none             &kp F20 /* mic */  &none            &none
          &bt BT_CLR    &bt BT_CLR_ALL &none           &none              &ext_power EP_TOG  /* | */        &kp K_MUTE      &kp K_PREV        &kp K_PLAY_PAUSE   &kp K_NEXT       &none
-&trans   &sys_reset    &bootloader    &soft_off       &out OUT_USB       &out OUT_BLE       /* | */        &kp K_VOL_DN    &none             &none              &bootloader      &sys_reset     &trans
+&kp Y    &sys_reset    &bootloader    &soft_off       &out OUT_USB       &out OUT_BLE       /* | */        &kp K_VOL_DN    &none             &none              &bootloader      &sys_reset     &trans
                                      /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                       &none           &none              &none              /* | */        &none           &none             &none
             >;
