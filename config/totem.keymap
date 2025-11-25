@@ -526,7 +526,7 @@ keymap {
          &kp HOME      &kp LEFT       &kp DOWN        &kp RIGHT           &kp END            /* | */        &kp RA(E)      &kp N4             &kp N5          &kp N6            &kp Z
 &trans   &mt LGUI ESC  &mt LALT TAB   &mt LCTRL INS   &kp RET             &kp PG_DN          /* | */        &kp N0         &kp N1             &mt RCTRL N2    &mt LALT N3       &mt RGUI EQUAL  &trans
                                       /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                      &kp SPACE       &kp LSHFT           &kp RET            /* | */        &kp RET        &kp RSHFT          &kp SPACE
+                                      &kp SPACE       &mt LSHFT N0        &kp RET            /* | */        &kp RET        &mt RSHFT N0       &kp SPACE
             >;
         };
 
