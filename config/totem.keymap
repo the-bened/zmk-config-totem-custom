@@ -502,9 +502,9 @@ keymap {
 
         default_layer {
             bindings = <
-            &mt LGUI X     &mt LALT V     &mt LCTRL L      &kp C              &kp W             /* | */        &kp K          &kp H              &kp G            &kp F            &kp Q
+            &kp X          &kp V          &kp L            &kp C              &kp W             /* | */        &kp K          &kp H              &kp G            &kp F            &kp Q
             &kp U          &kp I          &kp A            &kp E              &kp O             /* | */        &kp S          &kp N              &kp R            &kp T            &kp D
-&lt LIN DEL &kp LBKT       &kp SEMI       &kp SQT          &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT    &mt RGUI J   &ht_mo_tog ZMK SYS
+&lt LIN DEL &kp LBKT       &kp SEMI       &kp SQT          &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT     &mt RGUI J  &ht_mo_tog ZMK SYS
                                           /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                           &mo SYM          &lt NAV SPACE      &kp LSHFT         /* | */        &kp RSHFT      &lt NAV SPACE      &mo SYM
             >;
@@ -522,9 +522,9 @@ keymap {
 
         navigation_layer {
             bindings = <
-         &mt LGUI PG_UP &mt LALT BSPC &mt LCTRL UP    &kp DEL             &kp LGUI           /* | */        &kp GRAVE      &kp N7             &kp N8          &kp N9            &kp MINUS
+         &kp PG_UP      &kp BSPC      &kp UP          &kp DEL             &kp LGUI           /* | */        &kp GRAVE      &kp N7             &kp N8          &kp N9            &kp MINUS
          &kp HOME       &kp LEFT      &kp DOWN        &kp RIGHT           &kp END            /* | */        &kp RA(E)      &kp N4             &kp N5          &kp N6            &kp Z
-&trans   &kp ESC        &kp TAB       &kp INS         &kp RET             &kp PG_DN          /* | */        &kp N0         &kp N1             &mt RCTRL N2    &mt LALT N3       &mt RGUI EQUAL  &trans
+&trans   &mt LGUI ESC   &mt LALT TAB  &mt LCTRL INS   &kp RET             &kp PG_DN          /* | */        &kp N0         &kp N1             &mt RCTRL N2    &mt LALT N3       &mt RGUI EQUAL  &trans
                                       /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                       &kp SPACE       &mt LSHFT N0        &kp RET            /* | */        &kp RET        &mt RSHFT N0       &kp SPACE
             >;
