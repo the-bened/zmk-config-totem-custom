@@ -512,7 +512,7 @@ keymap {
             bindings = <
             &kp X          &kp V          &kp L            &kp C              &kp W             /* | */        &kp K          &kp H              &kp G            &kp F            &kp Q
             &kp U          &kp I          &kp A            &kp E              &kp O             /* | */        &kp S          &kp N              &kp R            &kp T            &kp D
-&lt LIN DEL &kp LBKT       &kp SEMI       &kp SQT          &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT     &kp J  &ht_mo_tog ZMK SYS
+&lt ZMK DEL &kp LBKT       &kp SEMI       &kp SQT          &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT     &kp J  &ht_mo_tog ZMK SYS
                                           /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                                        &ht_mo_repeat SYM 0 &lt NAV SPACE      &kp LSHFT         /* | */        &kp RSHFT      &lt NAV SPACE      &ht_mo_repeat SYM 0
             >;
@@ -580,7 +580,7 @@ keymap {
 
         zmk_layer {
             bindings = <
-         &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2    &none              &studio_unlock     /* | */        &kp K_VOL_UP    &none             &kp F20 /* mic */  &none            &none
+         &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2    &kp K_VOL_UP       &studio_unlock     /* | */        &kp K_VOL_UP    &none             &kp F20 /* mic */  &none            &none
          &bt BT_CLR    &bt BT_CLR_ALL &none           &none              &ext_power EP_TOG  /* | */        &kp K_MUTE      &kp K_PREV        &kp K_PLAY_PAUSE   &kp K_NEXT       &none
 &kp Y    &sys_reset    &bootloader    &soft_off       &out OUT_USB       &out OUT_BLE       /* | */        &kp K_VOL_DN    &none             &none              &bootloader      &sys_reset     &trans
                                      /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
