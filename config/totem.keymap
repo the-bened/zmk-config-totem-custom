@@ -44,6 +44,14 @@
             hold-trigger-on-release;
             bindings = <&mo>, <&tog>;
         };
+        ht_mo_repeat: ht_mo_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <220>;
+            hold-trigger-on-release;
+            bindings = <&mo>, <&key_repeat>;
+        };
     };
 };
 
@@ -504,9 +512,9 @@ keymap {
             bindings = <
             &kp X          &kp V          &kp L            &kp C              &kp W             /* | */        &kp K          &kp H              &kp G            &kp F            &kp Q
             &kp U          &kp I          &kp A            &kp E              &kp O             /* | */        &kp S          &kp N              &kp R            &kp T            &kp D
-&lt LIN DEL &kp LBKT       &kp SEMI       &kp SQT          &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT     &mt RGUI J  &ht_mo_tog ZMK SYS
+&lt LIN DEL &kp LBKT       &kp SEMI       &kp SQT          &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT     &kp J  &ht_mo_tog ZMK SYS
                                           /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                          &mo SYM          &lt NAV SPACE      &kp LSHFT         /* | */        &kp RSHFT      &lt NAV SPACE      &mo SYM
+                                       &ht_mo_repeat SYM 0 &lt NAV SPACE      &kp LSHFT         /* | */        &kp RSHFT      &lt NAV SPACE      &ht_mo_repeat SYM 0
             >;
         };
 
