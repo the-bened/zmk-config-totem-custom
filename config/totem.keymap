@@ -514,7 +514,8 @@ keymap {
             &kp U          &kp I          &kp A            &kp E              &kp O             /* | */        &kp S          &kp N              &kp R            &kp T            &kp D
 &lt ZMK DEL &kp LBKT       &kp SEMI       &kp SQT          &kp P              &kp Y             /* | */        &kp B          &kp M              &mt RCTRL COMMA  &mt LALT DOT     &kp J  &ht_mo_tog ZMK SYS
                                           /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                       &ht_mo_repeat SYM 0 &lt NAV SPACE      &kp LSHFT         /* | */        &kp RSHFT      &lt NAV SPACE      &ht_mo_repeat SYM 0
+                                          &mo SYM          &lt NAV SPACE      &kp LSHFT         /* | */        &kp RSHFT      &lt NAV SPACE      &mo SYM
+//                                     &ht_mo_repeat SYM 0 &lt NAV SPACE      &kp LSHFT         /* | */        &kp RSHFT      &lt NAV SPACE      &ht_mo_repeat SYM 0
             >;
         };
 
@@ -524,7 +525,8 @@ keymap {
             &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans
 &lt WIN DEL &trans        &trans        &trans           &trans             &trans             /* | */        &trans         &trans             &trans          &trans             &trans      &trans
                                         /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                                     &ht_mo_repeat SY2 0 &trans             &trans             /* | */        &trans         &trans             &ht_mo_repeat SY2 0
+                                        &mo SY2          &trans             &trans             /* | */        &trans         &trans             &mo SY2
+//                                   &ht_mo_repeat SY2 0 &trans             &trans             /* | */        &trans         &trans             &ht_mo_repeat SY2 0
             >;
         };
 
